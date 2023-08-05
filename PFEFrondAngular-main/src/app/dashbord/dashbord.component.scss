@@ -1,0 +1,96 @@
+.example-container {
+  width:100%;
+  height:100%;
+}
+.menu{
+  margin: 0;
+  padding: 0;
+}
+.example-sidenav-content {
+ 
+  height: 100%;
+
+}
+
+.example-sidenav {
+  
+}
+.color{
+  background-color:#FFE6C7;
+
+}
+a{
+  color:#454545;
+}
+.example-sidenav{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #f2f2f2; /* Couleur de fond du sidebar */
+}
+.sidebar{
+  padding-top:0px;
+  background-color: #FFE6C7;
+  height: 100%;
+}
+.sidebar li {
+  cursor: pointer;
+  padding: 10px;
+  
+  transition: background-color 0.3s ease;
+
+}
+
+.sidebar mat-list-item:hover {
+ 
+  background-color: #efa970; /* Couleur d'arrière-plan au survol */
+}
+.nav{
+  background:#FFE6C7;
+  color:white;
+  width:100%
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.tab-livreur tr:hover{
+  background:#efa970;
+  color: #454545;
+}
+.text{
+  color:#efa970 ;
+}
+.text2{
+  color:#454545 ;
+}
+.Details{
+  background-color:#FF6000 ;
+}
+.tab-vend tr:hover{
+  background:#efa970;
+
+}
+.tab-vend th{
+  color: #efa970;
+}
+.tab-livreur th{
+  color: #efa970;
+}
+.dash{
+  //margin-top: 7px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.logo{
+  font-size: small;
+  width: 200px;
+  height: 40px;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-bottom: 0%;
+}
+.container-fluid .card {
+  margin-right:0px;
+
+}

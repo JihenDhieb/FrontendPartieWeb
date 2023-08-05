@@ -1,0 +1,171 @@
+
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+     
+      <div class="sidebar">
+        <mat-list>
+          <mat-list-item (click)="selectedMenuItem = 'dashboard'"><h2 class="text2"><mat-icon class="mat-icon-24">dashboard</mat-icon>Dashbord</h2></mat-list-item>
+          <mat-list-item (click)="selectedMenuItem = 'Users'"><h2 class="text2"><mat-icon class="mat-icon-24">group</mat-icon>Users</h2></mat-list-item>
+          <mat-list-item (click)="selectedMenuItem = 'Vendeur'"><h2   class="text2"><mat-icon class="mat-icon-24">storefront</mat-icon>Vendeur</h2></mat-list-item>
+          <mat-list-item (click)="selectedMenuItem = 'Livreur'"><h2   class="text2"><mat-icon class="mat-icon-24">directions_run</mat-icon>Livreur</h2></mat-list-item>
+          <mat-list-item (click)="selectedMenuItem = 'commande'"><h2   class="text2"><mat-icon class="mat-icon-24">shopping_cart</mat-icon>commande</h2></mat-list-item>
+          <mat-list-item (click)="selectedMenuItem = 'Admin'"><h2   class="text2"><mat-icon class="mat-icon-24">group</mat-icon>Admin Users</h2></mat-list-item>
+          <mat-list-item (click)="logout()"><h2   class="text2"><mat-icon class="mat-icon-24">logout</mat-icon>deconnecté</h2></mat-list-item>
+        
+         </mat-list>
+      </div>
+      <p *NgIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+     
+    </mat-drawer>
+  
+    <div class="example-sidenav-content" >
+    
+    <p>
+        <mat-toolbar class="nav">
+         <button mat-icon-button class="example-icon"  (click)="drawer.toggle()"  aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>dashboard</span>
+        <span class="example-spacer"></span>
+      
+      </mat-toolbar>
+      </p>
+  <div *ngIf="selectedMenuItem === 'dashboard'">
+    <div class="container-fluid pt-4 px-4" >
+         <div class="row g-4">
+           
+                     <div class="col-sm-6 col-xl-3">
+                        <mat-card >
+                            <mat-card-content>
+                        <div class=" rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-line fa-3x text"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Today Sale</p>
+                                <h6 class="mb-0">${{admintodayS}}</h6>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                    </div> 
+               
+          
+             <div class="col-sm-6 col-xl-3">
+                <mat-card >
+                    <mat-card-content>
+                 <div class=" rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-bar fa-3x text"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Sale</p>
+                        <h6 class="mb-0">${{totalSales}}</h6>
+                    </div>
+                </div>
+                </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <mat-card >
+                    <mat-card-content> 
+                
+                    <div class="rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-area fa-3x text"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Today Revenue</p>
+                        <h6 class="mb-0">${{adminTRevenue}}</h6>
+                    </div>
+                </div>
+                
+                </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <mat-card >
+                    <mat-card-content>
+                <div class=" rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-pie fa-3x text"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Revenue</p>
+                        <h6 class="mb-0">${{admintol}}</h6>
+                    </div>
+                </div>
+                </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <app-chart></app-chart>
+   
+<div class="container-fluid pt-4 px-4">
+    <mat-card >
+        <mat-card-content>
+  <div class=" text-center rounded p-4">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+          <h2 class="mb-0">Liste des users</h2>
+       
+      </div>
+      <div class="table-responsive">
+          <table class="table text-start align-middle table-bordered table-hover mb-0 tab-vend">
+              <thead>
+                  <tr class="text-white">
+                      <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                      <th scope="col">Id</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Categorie</th>
+                      <th scope="col">Email</th>
+                     
+                 
+                      <th scope="col">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let p of listPages">
+                      <td><input class="form-check-input" type="checkbox"></td>
+                      <td>{{p.id}}</td>
+                      <td>{{p.title}}</td>
+                      <td>{{p.activity}}</td>
+                      <td>{{p.email}}</td>
+                   
+                     
+                      <td>
+                        <a  class="btn btn-sm Details" (click)="detail(p.id)">
+                          Details</a></td>
+                  </tr>
+                  
+                  
+                 
+                 
+              </tbody>
+          </table>
+      </div>
+  </div>
+  </mat-card-content>
+  </mat-card>
+
+</div>
+<!-- Recent Sales End -->
+   
+  <!-- NOTE table livreur -->
+  <div class="mat-elevation-z8 dash">
+ 
+  </div>
+  <!-- NOTE end table -->
+  </div>
+  <app-list-vendor *ngIf="selectedMenuItem === 'Vendeur'"></app-list-vendor>
+  <app-all-users *ngIf="selectedMenuItem === 'Users'"></app-all-users>
+  <app-order *ngIf="selectedMenuItem === 'commande'"></app-order>
+  <app-riders *ngIf="selectedMenuItem === 'Livreur'"></app-riders>
+  <app-admin-user *ngIf="selectedMenuItem === 'Admin'"></app-admin-user>
+  <div *ngIf="selectedMenuItem === 'Edit'" >
+      <br>
+      <br><br>
+
+     <router-outlet></router-outlet>
+  </div>
+    </div>
+   
+  </mat-drawer-container>
+
+  
+    <!-- Afficher le composant Dashboard ici -->
+   
+  
+ 

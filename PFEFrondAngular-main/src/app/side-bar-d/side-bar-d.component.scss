@@ -1,0 +1,96 @@
+.example-container {
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+
+.example-sidenav-content {
+  height: 100%;
+}
+
+a {
+  color: #454545;
+}
+
+.sidebar {
+  padding-top: 0px;
+  background-color: #FFE6C7;
+  height: 100%;
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar mat-list-item:hover {
+  background-color: #efa970; /* Couleur d'arrière-plan au survol */
+}
+
+.nav {
+  background: #FFE6C7;
+  color: white;
+  width: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.tab-livreur tr:hover {
+  background: #efa970;
+  color: #454545;
+}
+
+.text {
+  color: #efa970;
+}
+
+.text2 {
+  color: #454545;
+}
+
+.Details {
+  background-color: #FF6000;
+}
+
+.tab-vend tr:hover {
+  background: #efa970;
+}
+
+.tab-vend th {
+  color: #efa970;
+}
+
+.tab-livreur th {
+  color: #efa970;
+}
+
+.dash {
+  margin-left: 20px;
+  margin-right: 20px;
+  background: #FFE6C7;
+}
+
+.logo {
+  font-size: small;
+  width: 200px;
+  height: 40px;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-bottom: 0%;
+}
+
+/* Style for the specific widget box */
+.widget-box {
+  background-color: orange; /* Change the background color to orange */
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}

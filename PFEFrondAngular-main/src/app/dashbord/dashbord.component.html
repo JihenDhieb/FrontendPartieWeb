@@ -1,0 +1,102 @@
+
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+     
+      <div class="sidebar">
+        <mat-list>
+            <img class="logo" src="../../assets/logo.png">
+          <mat-list-item (click)="selectedMenuItem = 'dashboard'"><h2 class="text2"><mat-icon class="mat-icon-24">dashboard</mat-icon>Dashbord</h2></mat-list-item>
+          <mat-list-item (click)="selectedMenuItem = 'Vendeur'"><h2   class="text2"><mat-icon class="mat-icon-24">storefront</mat-icon>Vendeur</h2></mat-list-item>
+          <mat-list-item (click)="selectedMenuItem = 'Livreur'"><h2   class="text2"><mat-icon class="mat-icon-24">directions_run</mat-icon>Livreur</h2></mat-list-item>
+          
+     
+         
+          <mat-list-item (click)="logout()"><h2   class="text2"><mat-icon class="mat-icon-24">logout</mat-icon>deconnecté</h2></mat-list-item>
+          
+         </mat-list>
+      </div>
+    
+
+      <p *NgIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+     
+    </mat-drawer>
+  
+    <div class="example-sidenav-content" >
+    
+    <!-- NOTE  nav dashbord-->
+    <p>
+        <mat-toolbar class="nav">
+         <button mat-icon-button class="example-icon"  (click)="drawer.toggle()"  aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+         <mat-icon>share</mat-icon>
+       </button>
+       <a  (click)="logout()">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+       <mat-icon>logout</mat-icon>
+       </button>
+       </a>
+      </mat-toolbar>
+      </p>
+
+
+    <!--NOTE  end nav-->
+     
+      <!--petite card-->
+       <!-- Sale & Revenue Start -->
+       <div class="container-fluid pt-4 px-4" >
+        <div class="row g-4">
+           
+                 
+               
+           
+            <div class="col-sm-6 col-xl-3">
+                <mat-card class="card">
+                    <mat-card-content>
+                <div class=" rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-bar fa-3x text"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">caisse</p>
+                        <h6 class="mb-0">${{us.compteurC-(us.compteurC*0.01)}}</h6>
+                    </div>
+                </div>
+                </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <mat-card >
+                    <mat-card-content>
+                <div class="rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-area fa-3x text"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Revenue</p>
+                        <h6 class="mb-0">${{us.t}}</h6>
+                    </div>
+                </div>
+                </mat-card-content>
+                </mat-card>
+            </div>
+          
+        </div>
+    </div>
+ 
+  <app-list-vendor *ngIf="selectedMenuItem === 'Vendeur'" ></app-list-vendor>
+  
+  <app-riders *ngIf="selectedMenuItem === 'Livreur'"></app-riders>
+
+  
+    </div>
+   
+  </mat-drawer-container>
+
+  
+    <!-- Afficher le composant Dashboard ici -->
+   
+  
+ 
