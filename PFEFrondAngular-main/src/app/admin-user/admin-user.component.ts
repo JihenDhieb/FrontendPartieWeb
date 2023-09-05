@@ -28,7 +28,7 @@ export class AdminUserComponent implements OnInit, AfterViewInit {
  // dataSource = new MatTableDataSource<Observable<page2[]>>(this.vendors$);
 
   ngOnInit(): void {
-  
+    this.getAdmins(""); 
    
     }
     getAdmins(filter: any){
@@ -50,11 +50,9 @@ export class AdminUserComponent implements OnInit, AfterViewInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
     this.dataSource.filter = filterValue;
-    if (filterValue === "") {
-      this.dataSource.data = [];
-    } else {
+    
       this.getAdmins(filterValue);
-    }
+    
   }
   openDialog(){
     let dialogRef = this.dialog.open(RegisterSAdminComponent, {

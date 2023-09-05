@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Commande } from '../Models/Commande';
 const AUTH_API = 'http://localhost:8080/api/auth/AjoutCommande';
 const AUTH_API1 = 'http://localhost:8080/api/auth/caisseNotif';
-const AUTH_API2 = 'http://localhost:8080/caisse/getAll';
+const AUTH_API2 = 'http://localhost:8080/caisse/getAllC';
 const AUTH_API3 = 'http://localhost:8080/api/auth/getListNotification';
 const AUTH_API4 = 'http://localhost:8080/api/auth/getCaisse';
 const AUTH_API5 = 'http://localhost:8080/api/auth/caisseListClient';

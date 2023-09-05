@@ -21,7 +21,7 @@ export class AllUsersComponent implements OnInit, AfterViewInit {
   constructor(private user: UserServiceService) { }
 
   ngOnInit(): void {
-    
+    this.getUsers(""); 
   }
 
   ngAfterViewInit() {
@@ -39,11 +39,8 @@ getUsers(filter: any){
 }
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-    if (filterValue === "") {
-      this.dataSource.data = [];
-    } else {
       this.getUsers(filterValue);
-    }
+    
 
   }
   

@@ -117,18 +117,20 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr *ngFor="let p of listPages">
+                  <tr *ngFor="let p of listPages2"  >
                       <td><input class="form-check-input" type="checkbox"></td>
                       <td>{{p.id}}</td>
                       <td>{{p.title}}</td>
                       <td>{{p.activity}}</td>
                       <td>{{p.email}}</td>
                    
-                     
                       <td>
-                        <a  class="btn btn-sm Details" (click)="detail(p.id)">
-                          Details</a></td>
-                  </tr>
+                        <a *ngIf="!p.etat" class="btn btn-sm Details" (click)="detail(p.id)">
+                          Accepter
+                        </a>
+                        <span *ngIf="p.etat">true</span>
+                      </td>
+                      
                   
                   
                  

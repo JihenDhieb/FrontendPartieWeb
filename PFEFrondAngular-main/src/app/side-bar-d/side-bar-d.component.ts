@@ -30,6 +30,7 @@ Chart.register(...registerables);
 export class SideBarDComponent implements OnInit,AfterViewInit   {
   showFiller = false;
   listPages:any[]=[];
+  listPages2:any[]=[];
   act2:any[]=[];
   list:any[]=[];
   totalSales:any;
@@ -151,6 +152,11 @@ export class SideBarDComponent implements OnInit,AfterViewInit   {
       next: (data) => {
         this.listPages=data;
         console.log(data);
+        this.listPages.forEach(page => {
+          if (!page.etat) {
+            this.listPages2.push(page);
+          }
+        });
      
        
       },
@@ -214,10 +220,18 @@ renderChart(act2:any,list:any){
       }
     });
 }
-detail(id:string){
-  this.router.navigate([`detailP/${id}`]);
+detail(id: string) {
+  console.log("ID de la page : " + id); // Imprime l'ID dans la console de la page
 
+  this.vendor.etat(id).subscribe({
+     
+    next: (data) => {
+      console.log("correct");
+    },
+    error: (e) => console.error(e)
+  });
 }
+
 logout():void{
   this.auth.clearToken();
 

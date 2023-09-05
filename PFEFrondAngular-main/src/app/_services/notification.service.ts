@@ -8,8 +8,8 @@ import { DeviceDto } from '../Models/DeviceDto';
   providedIn: 'root'
 })
 export class NotificationService {
-  private  AUTH_API = 'http://localhost:8080/api/auth/caisseNotif';
-  private  AUTH_API1 = 'http://localhost:8080/notification/addDevice';
+  private  AUTH_API = 'http://localhost:8085/api/auth/caisseNotif';
+  private  AUTH_API1 = 'http://localhost:8085/notification/addDevice';
   constructor(private http:HttpClient) { }
 
   getNotification(id:string ): Observable<any>{

@@ -12,10 +12,12 @@ import { Activity } from '../Models/Activity';
 
 const AUTH_API = 'http://localhost:8080/pages/findAllPages';
 const baseURL2 ="http://localhost:8080/api/auth/ListProduit";
+
 @Injectable({
   providedIn: 'root'
 })
 export class VendorServicesService {
+  private api ="http://localhost:8080/pages/Etat";
   private apiUrl = 'http://localhost:8080/pages';
   private  baseURL ="http://localhost:8080/pages/PagesUser";
   private apiUrl2 = 'http://localhost:8080/pages/detailPage';
@@ -31,15 +33,9 @@ export class VendorServicesService {
   private apiUrl12= 'http://localhost:8080/pages/editPage';
   private apiUrl13= 'http://localhost:8080/pages/findAllPages';
   private apiUrl14= 'http://localhost:8080/pages/PagesBycategories';
-
   private apiUrl15= 'http://localhost:8080/pages/UserBypages';
   private apiUrl16= 'http://localhost:8080/article/articlesByCategory';
- 
-  
-  
- 
   constructor(private http:HttpClient) { }
-
  private  _loading$=new BehaviorSubject<boolean>(false);
   get loading$(): Observable<boolean>{
     return this._loading$.asObservable();
@@ -110,6 +106,10 @@ deletePage(iduser:string|null,idPage:string):Observable<any>{
   return this.http.delete(`${this.apiUrl5}/${iduser}/${idPage}`);
 
 
+}
+//changer l'etat du page
+etat(id: string|null): Observable<string> {
+  return this.http.put<string>(`${this.api}/${id}`, '');
 }
 //edit photo profile
 editPagephoto(id:string|null,imageProfile:File):Observable<any>{

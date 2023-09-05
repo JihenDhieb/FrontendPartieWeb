@@ -34,7 +34,7 @@ export class ListVendorComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.initObservables();
    // Change this to the desired initial filter value.
-  
+   this.getVendeurs(""); 
    
     }
     getVendeurs(filter: any){
@@ -53,14 +53,11 @@ export class ListVendorComponent implements OnInit, AfterViewInit {
     this.vendors$=this.vendorService.vendors$;
   }
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-    this.dataSource.filter = filterValue;
-    if (filterValue === "") {
-      this.dataSource.data = [];
-    } else {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
       this.getVendeurs(filterValue);
     }
-  }
+  
 
   modifier(i:string):void {
     const dialogRef = this.dialog.open(Dialog22Component, {

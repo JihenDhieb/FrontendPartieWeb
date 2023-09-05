@@ -4,9 +4,9 @@
      
       <div class="sidebar">
         <mat-list>
-            <img class="logo" src="../../assets/logo.png">
+            
           <mat-list-item (click)="selectedMenuItem = 'dashboard'"><h2 class="text2"><mat-icon class="mat-icon-24">dashboard</mat-icon>Dashbord</h2></mat-list-item>
-          <mat-list-item (click)="selectedMenuItem = 'Vendeur'"><h2   class="text2"><mat-icon class="mat-icon-24">storefront</mat-icon>Vendeur</h2></mat-list-item>
+
           <mat-list-item (click)="selectedMenuItem = 'Livreur'"><h2   class="text2"><mat-icon class="mat-icon-24">directions_run</mat-icon>Livreur</h2></mat-list-item>
           
      
@@ -63,7 +63,7 @@
                     <i class="fa fa-chart-bar fa-3x text"></i>
                     <div class="ms-3">
                         <p class="mb-2">caisse</p>
-                        <h6 class="mb-0">${{us.compteurC-(us.compteurC*0.01)}}</h6>
+                        <h6 class="mb-0" >${{us.compteurC}}</h6>
                     </div>
                 </div>
                 </mat-card-content>
@@ -76,7 +76,7 @@
                     <i class="fa fa-chart-area fa-3x text"></i>
                     <div class="ms-3">
                         <p class="mb-2">Revenue</p>
-                        <h6 class="mb-0">${{us.t}}</h6>
+                        <h6 class="mb-0" >$</h6>
                     </div>
                 </div>
                 </mat-card-content>
@@ -86,9 +86,9 @@
         </div>
     </div>
  
-  <app-list-vendor *ngIf="selectedMenuItem === 'Vendeur'" ></app-list-vendor>
+
   
-  <app-riders *ngIf="selectedMenuItem === 'Livreur'"></app-riders>
+  <app-lll *ngIf="selectedMenuItem === 'Livreur'"></app-lll>
 
   
     </div>

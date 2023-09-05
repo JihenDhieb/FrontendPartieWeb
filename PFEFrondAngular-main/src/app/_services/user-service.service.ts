@@ -18,7 +18,7 @@ const baseURL9 ="http://localhost:8080/caisse/totalSales";
 const baseURL10 ="http://localhost:8080/User/Livreurs";
 const baseURL11 ="http://localhost:8080/User/Admins";
 const baseURL12 ="http://localhost:8080/User/setSold";
-const baseURL13="http://localhost:8080/caisse/Etat";
+const baseURL13="http://localhost:8080/api/auth/Etat";
 const baseURL14="http://localhost:8080/User/VendeurTotalRevenu";
 const baseURL15="http://localhost:8080/User/VendeurSalesToday";
 const baseURL16="http://localhost:8080/User/VendeurSalesTotal";
@@ -26,6 +26,7 @@ const  baseURL18="http://localhost:8080/User/VendeurTodayR";
 const baseURL19 ="http://localhost:8080/caisse/UpdateSoldeSousAdmin";
 const baseURL20="http://localhost:8080/caisse/Reset";
 const baseURL21 ="http://localhost:8080/caisse/PagesSoldeSousAdmin";
+const baseURL22="http://localhost:8080/caisse/payer";
 @Injectable({
   providedIn: 'root'
 })
@@ -42,9 +43,9 @@ export class UserServiceService {
     return this.http.get<user>(`${baseURL3}/${id}`);
   }
 
-  getUserByemail(email:String): Observable<u> {
+  getUserByemail(email:String): Observable<any> {
 
-    return this.http.get<u>(`${baseURL4}/${email}`);
+    return this.http.get<any>(`${baseURL4}/${email}`);
   }
 
 
@@ -135,6 +136,11 @@ return this.http.put(`${baseURL20}/${id}`,'');
 PagesAdminsolde(id:String,id2:string,i:Number): Observable<any> {
 
   return this.http.put(`${baseURL21}/${id}/${id2}`,i);
+}
+//payer 
+payer(id:String,ids:String): Observable<any> {
+
+  return this.http.put(`${baseURL22}/${id}/${ids}`,null);
 }
 
 }
